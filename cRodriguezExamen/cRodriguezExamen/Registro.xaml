@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="cRodriguezExamen.Registro">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="lblUsuario" ></Label> 
+            <Label Text="REGISTRO" FontSize="18" HorizontalTextAlignment="Center"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                 </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Fecha" HorizontalTextAlignment="Start" Grid.Row="0" Grid.Column="0"/>
+                <Label Text="Pais" HorizontalTextAlignment="Start" Grid.Row="1" Grid.Column="0"/>
+                <Label Text="Ciudad" HorizontalTextAlignment="Start" Grid.Row="2" Grid.Column="0"/>
+                <Label Text="Monto Inicial" HorizontalTextAlignment="Start" Grid.Row="3" Grid.Column="0"/>
+                <Label Text="Pago mensual" HorizontalTextAlignment="Start" Grid.Row="4" Grid.Column="0"/>
+
+                <DatePicker Date="6/22/2023" Format="m/d/yyyy" Grid.Row="0" Grid.Column="1"/>
+                <Picker x:Name="Pais" SelectedIndexChanged="Pais_SelectedIndexChanged" Grid.Row="1" Grid.Column="1" >
+                    <Picker.Items>
+                        <x:String>Ecuador</x:String>
+                        <x:String>Colombia</x:String>
+                        <x:String>Peru</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Picker x:Name="Ciudad" SelectedIndexChanged="Ciudad_SelectedIndexChanged" Grid.Row="2" Grid.Column="1" >
+                    <Picker.Items>
+                        <x:String>Quito</x:String>
+                        <x:String>Cali</x:String>
+                        <x:String>Cuzco</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Entry x:Name="txtmontoI" Placeholder="Ingrese valor inicial" Keyboard="Numeric" Grid.Row="3" Grid.Column="1"></Entry>
+
+                <Entry x:Name="couta" Grid.Row="4" Grid.Column="1"></Entry>
+
+
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions/>
+                <Grid.RowDefinitions/>
+                <Grid.RowDefinitions/>
+
+                <Grid.ColumnDefinitions/>
+                <Grid.ColumnDefinitions/>
+                <Grid.ColumnDefinitions/>
+
+                <Label Text="Nombre" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+                <Label Text="Apellido" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="1"/>
+                <Label Text="Nombre" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="2"/>
+                <Entry x:Name="txtNombre" Placeholder="Nombre" TextColor="Gray" HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="0"></Entry>
+                <Entry x:Name="txtApellido" Placeholder="Apellido" TextColor="Gray" HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="1"></Entry>
+                <Entry x:Name="txtEdad" Placeholder="Edad" TextColor="Gray" HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="2" ></Entry>
+
+
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions/>
+
+                <Grid.ColumnDefinitions/>
+                <Grid.ColumnDefinitions/>
+
+                <Button x:Name="btnPago" Text="Pago Mensual" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0" Clicked="btnPago_Clicked" />
+                <Button x:Name="btnResumen" Text="Resumen" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Clicked="btnResumen_Clicked" />
+
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
